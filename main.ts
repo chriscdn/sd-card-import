@@ -15,7 +15,6 @@ async function importMediaFromSDCard(
 
   const sources = sourceGlobs.map((sourceGlob) => glob.sync(sourceGlob)).flat();
 
-  console.log(sources);
   const results = {
     copied: 0,
     notcopied: 0,
@@ -64,10 +63,7 @@ async function importMediaFromSDCard(
 
   await writeJson(dbFile, md5s);
 
-  // console.log("\n");
   console.log(results);
-  // console.log("\n");
-  // console.log("fin");
 
   return results;
 }
