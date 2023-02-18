@@ -64,10 +64,12 @@ async function importMediaFromSDCard(
 
   await writeJson(dbFile, md5s);
 
-  console.log("\n");
+  // console.log("\n");
   console.log(results);
-  console.log("\n");
-  console.log("fin");
+  // console.log("\n");
+  // console.log("fin");
+
+  return results;
 }
 
 export default importMediaFromSDCard;
