@@ -1,6 +1,6 @@
 import { glob } from "npm:glob";
 import * as path from "https://deno.land/std@0.170.0/path/mod.ts";
-import Semaphore from "https://raw.githubusercontent.com/chriscdn/promise-semaphore/master/lib/index.es.js?v=2";
+import Semaphore from "npm:@chriscdn/promise-semaphore";
 import { readJson, writeJson } from "https://deno.land/x/jsonfile@1.0.0/mod.ts";
 import md5File from "./md5File.ts";
 const semaphore = new Semaphore(2);
@@ -8,7 +8,7 @@ const semaphore = new Semaphore(2);
 async function importMediaFromSDCard(
   dbFile: string,
   sourceGlobs: Array<string>,
-  targetPath: string,
+  targetPath: string
 ) {
   const md5s = (await readJson(dbFile).catch(() => [])) as Array<string>;
 
