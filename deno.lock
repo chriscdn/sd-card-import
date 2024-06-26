@@ -377,6 +377,7 @@
     "https://deno.land/x/jsonfile@1.0.0/write_json.ts": "89a6231f51a6759dfff8f1f5534d030c2239c22fc9f3c0b3305d424f4f1d5604",
     "https://raw.githubusercontent.com/chriscdn/promise-semaphore/master/lib/index.es.js": "c187d1c67e095eb25790f4c74ba7962bea3f14ff49c15361c185d393cb5dbb4e",
     "https://raw.githubusercontent.com/chriscdn/sd-card-import/0.0.2/main.ts": "c0aa3b71723d792563fd3bd1899aa62eeb766a3be7cf290b81e461b5c6eec9c9",
+    "https://raw.githubusercontent.com/chriscdn/sd-card-import/0.0.3/main.ts": "c0aa3b71723d792563fd3bd1899aa62eeb766a3be7cf290b81e461b5c6eec9c9",
     "https://raw.githubusercontent.com/chriscdn/sd-card-import/main/main.ts?v=4": "4d719559cbe5f1cc759d642f5dbc44dbffe4a37335231a1e57b14ce0c768cf2a",
     "https://raw.githubusercontent.com/chriscdn/sd-card-import/main/main.ts?v=9": "7c54e6a34e9e49f9ec30d4fc888d5cba389ddcd2e7b14a4b710ed6d5e38704f4",
     "https://raw.githubusercontent.com/chriscdn/sd-card-import/main/md5File.ts": "58f31108961e0dba7bcb0404a8bc2059bf5ab0a44de5c73b2693326e3ffde0c7"
