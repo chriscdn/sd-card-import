@@ -7,9 +7,9 @@ This Deno script is for importing photos and videos from SD cards. It ensures th
 Create a shell script as follows:
 
 ```js
-#!/usr/bin/env -S deno run --allow-read --allow-write --unstable
+#!/usr/bin/env -S deno run --allow-read --allow-write
 
-import importMediaFromSDCard from "https://raw.githubusercontent.com/chriscdn/sd-card-import/main/main.ts?v=2";
+import { importMediaFromSDCard } from "https://raw.githubusercontent.com/chriscdn/sd-card-import/main/main.ts?v=2";
 
 // A writeable location to store the hash codes.
 const dbFile = "/Users/chris/.import-sd-card/db.test.json";

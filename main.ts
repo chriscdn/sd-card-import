@@ -1,15 +1,25 @@
-import { glob } from "npm:glob";
-import * as path from "https://deno.land/std@0.170.0/path/mod.ts";
+import { glob } from "npm:glob@10.4.2";
+import * as path from "https://deno.land/std@0.224.0/path/mod.ts";
 import Semaphore from "npm:@chriscdn/promise-semaphore";
 import { readJson, writeJson } from "https://deno.land/x/jsonfile@1.0.0/mod.ts";
-import md5File from "./md5File.ts";
+import { encodeHex } from "jsr:@std/encoding/hex";
+import { crypto } from "jsr:@std/crypto";
+
 const semaphore = new Semaphore(2);
 
-async function importMediaFromSDCard(
+const md5File = async (filePath: string): Promise<string> => {
+  const file = await Deno.open(filePath, { read: true });
+  const readableStream = file.readable;
+  const fileHashBuffer = await crypto.subtle.digest("SHA-256", readableStream);
+  const fileHash = encodeHex(fileHashBuffer);
+  return fileHash;
+};
+
+const importMediaFromSDCard = async (
   dbFile: string,
   sourceGlobs: Array<string>,
-  targetPath: string
-) {
+  targetPath: string,
+) => {
   const md5s = (await readJson(dbFile).catch(() => [])) as Array<string>;
 
   const sources = sourceGlobs.map((sourceGlob) => glob.sync(sourceGlob)).flat();
@@ -65,6 +75,6 @@ async function importMediaFromSDCard(
   console.log(results);
 
   return results;
-}
+};
 
-export default importMediaFromSDCard;
+export { importMediaFromSDCard };
